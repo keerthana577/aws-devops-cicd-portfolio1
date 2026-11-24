@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: monitoring
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 15s
+    scrape_configs:
+      - job_name: "devops-demo-app"
+        metrics_path: /metrics
+        static_configs:
+          # Replace this with a reachable service DNS name in your cluster.
+          - targets: ["devops-demo-service.default.svc.cluster.local:80"]

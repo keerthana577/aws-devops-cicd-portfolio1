@@ -1,0 +1,3 @@
+aws_region         = "ap-south-1"
+cluster_name       = "devops-portfolio-eks"
+kubernetes_version = "1.30"
